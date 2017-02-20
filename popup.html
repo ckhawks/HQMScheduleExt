@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+
+      #container {
+        width: 500px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy <div id="status"></div>
+     -->
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <!-- Title bar -->
+      <center>
+        <h2>HockeyQuestionMark Helper</h2>
+
+        <hr>
+        <button id="lhlSchedule" value="tab">LHL Schedule</button>
+        <button id="rslSchedule" value="tab">RSL Schedule</button>
+        <button id="jslSchedule" value="tab">JSL Schedule</button>
+        <br>
+        <hr>
+        <!-- <iframe style="width: 450px;" src="https://docs.google.com/spreadsheets/d/19eVof0YuNIPEESL0qRuJE7G8x7wGUVv--1AUNeEEPrk/pubhtml?widget=true&amp;headers=false"></iframe> -->
+
+
+        <!-- Links to useful places -->
+        <button id="hqmSub" value="tab">Go to subreddit</button>
+        <button id="lhlSite" value="tab">Go to LHL website</button>
+        <button id="hqmStream" value="tab">Go to HQMNetwork Stream</button>
+        <script src="linker.js"></script>
+        <hr>
+        <footer>
+          Made by Toaster. Better updates to come.
+        </footer>
+      </center>
+    </div>
+  </body>
+</html>
